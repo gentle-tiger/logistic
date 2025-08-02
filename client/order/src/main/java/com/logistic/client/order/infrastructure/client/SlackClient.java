@@ -1,0 +1,13 @@
+package com.logistic.client.order.infrastructure.client;
+
+import com.logistic.client.order.application.dto.SlackRequestDto;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+@FeignClient(name = "alarm")
+public interface SlackClient {
+
+    @PostMapping("/api/v1/slack/order")
+    void createSlackMessage(@RequestBody SlackRequestDto requestDto);
+}

@@ -1,0 +1,2 @@
+CREATE DATABASE db_user;
+CREATE DATABASE db_hub;
